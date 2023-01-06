@@ -1,0 +1,96 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    @model IEnumerable<quala>;
+}
+<div>
+    <form action="" >
+        <table>
+            <tr>
+                <td>
+                    <label>Codigo (*)</label>
+                    <input type="number" required />
+                </td>
+                <td>
+                    <label>Descripción (*)</label>
+                    <input type="text" required maxlength="250" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Dirección (*)</label>
+                    <input type="text" required maxlength="250" />
+                </td>
+                <td>
+                    <label>Identificación (*)</label>
+                    <input type="text" required maxlength="50" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>Moneda</label>
+                    <select name="moneda">
+                        <option value="COP" selected>Peso Colombiano</option>
+                        <option value="BRA">Real Brasileño</option>
+                        <option value="DOP">Peso Dominicano</option>
+                        <option value="USD">Dolar</option>
+                        <option value="MXN">Peso Mexicano</option>
+                        <option value="PEN">Sol Peruano</option>
+                        <option value="GTQ">Quetzal Guatemalteco</option>
+                        <option value="HNL">Lempira Hondureño</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" />
+    </form>
+</div>
+<div>
+    <form>
+        <table>
+            <thead>
+                <tr>
+                    <td>
+                        Código
+                    </td>
+                    <td>
+                        Descripción
+                    </td>
+                    <td>
+                        Dirección
+                    </td>
+                    <td>
+                        Identificación
+                    </td>
+                    <td>
+                        Moneda
+                    </td>
+                    <td>
+                        Accion
+                    </td>
+                </tr>
+                @foreach (var item in Model)
+                {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.direccion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.identificacion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.moneda)
+                </td>
+d
+            </tr>
+                }
+
+            </thead>
+        </table>
+    </form>
+</div>
